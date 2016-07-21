@@ -1,0 +1,21 @@
+{
+  "name": "NodejsStarterApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "cfenv": "^1.0.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.13.4",
+    "express-session": "^1.14.0",
+    "passport": "^0.3.2",
+    "passport-idaas-openidconnect": "^1.1.2",
+    "request": "^2.73.0"
+  },
+  "repository": {},
+  "engines": {
+    "node": "4.x"
+  }
+}
