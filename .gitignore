@@ -1,0 +1,7 @@
+node_modules/
+bower_components/
+
+api_key.txt
+local-service-config.json
+gmail-nodejs-quickstart.json
+client_secret.json

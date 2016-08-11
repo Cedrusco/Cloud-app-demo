@@ -1,0 +1,23 @@
+<h1 class="message-header home-text">Good news/Bad news</h1>
+<section class="message-list">
+<md-toolbar class="message-toolbar">
+  <div class="md-toolbar-tools">
+    <h1>Emails</h1>
+    <span flex></span>
+    <h3>{{ reverse ? "Good" : "Bad" }} news first</h3>
+    <md-button ng-click="reverse=!reverse">Sort</md-button>
+  </div>
+</md-toolbar>
+<md-list>
+  <md-list-item ng-repeat="message in messages | orderBy: 'sentiment.score' : reverse" class="md-3-line" 
+                ng-class="{ positive: message.sentiment.score >= 0.2, neutral: message.sentiment.score < 0.2 && message.sentiment.score > -0.2, negative: message.sentiment.score <= -0.2 }">
+    <div class="md-list-item-text">
+      <h3>{{ message.Subject }}</h3>  
+      <h4>From: {{ message.From }} </h4>
+      <h4>Sentiment: {{ message.sentiment.type }} | Score: <span class="score">{{ message.sentiment.score }}</span></h4>  
+      <p>{{ message.snippet }}</p>
+    </div>
+    <md-divider ng-if="!$last"></md-divider>
+  </md-list-item>
+</md-list>
+<section>
